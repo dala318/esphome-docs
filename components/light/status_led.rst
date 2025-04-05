@@ -23,6 +23,7 @@ When the device is in OK state, the LED will be restored to the state of the ``b
       - platform: status_led
         name: "Switch state"
         pin: GPIOXX
+        activity_led: false
 
 .. note::
 
@@ -36,6 +37,7 @@ Configuration variables:
 
 - **pin** (*Optional*, :ref:`Pin Schema <config-pin_schema>`): The GPIO pin to operate the LED on.
 - **output** (*Optional*, :ref:`config-id`): The id of the binary :ref:`output` to use for this light.
+- **activity_led** (*Optional*, boolean): Activates the status_led to also indicate activity. Defaults to ``false``. (This feature will also require the component you want to report activity support this feature and is activated)
 - All other options from :ref:`Light <config-light>`.
 
 .. note::

@@ -32,6 +32,7 @@ Configuration variables:
 - **pin** (**Required**, :ref:`Pin Schema <config-pin_schema>`): The
   GPIO pin to operate the status LED on.
 - **id** (*Optional*, :ref:`config-id`): Manually specify the ID used for code generation.
+- **activity_led** (*Optional*, boolean): Activates the status_led to also indicate activity. Defaults to ``false``. (This feature will also require the component you want to report activity support this feature and is activated)
 
 .. note::
 
