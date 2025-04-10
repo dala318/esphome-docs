@@ -65,6 +65,7 @@ ESPHome-specific components or components supporting ESPHome device provisioning
     JSON, components/json, json.svg, dark-invert
     XXTEA, components/xxtea, xxtea.svg
     Script, components/script, description.svg, dark-invert
+    Sub Devices, components/devices, home-assistant.svg, dark-invert
 
 ESPHome Configuration
 ---------------------
