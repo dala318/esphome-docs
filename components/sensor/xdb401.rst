@@ -33,7 +33,7 @@ Configuration
 Configuration variables
 -----------------------
 
-- **pressure** (*Optional*): The information for the pressure sensor. See :ref:`xdb401-converting`.
+- **pressure** (*Optional*): The information for the pressure sensor. Readings in pacals (Pa). See :ref:`xdb401-converting`.
 
  - All other options from :ref:`Sensor <config-sensor>`.
 
@@ -71,10 +71,10 @@ For best application results, the sensor should be calibrated to the specific ra
 
 Calibrated
 **********
-1. Expose the sensor to a low known pressure, for example ``10`` kPa.
-2. Observe the value of the raw pressure sensor, for example ``12`` kPa.
-3. Expose the sensor to a high pressure, for example ``100`` kPa (=1 atm).
-4. Observe the value of the raw pressure sensor, for example ``101.325`` kPa.
+1. Expose the sensor to a low known pressure, for example ``3 447`` Pa (0.5 psi).
+2. Observe the value of the raw pressure sensor, for example ``3 500`` Pa.
+3. Expose the sensor to a high pressure, for example ``20 684`` Pa (3 psi).
+4. Observe the value of the raw pressure sensor, for example ``20 500`` Pa.
 5. Use ``calibrate_linear`` filter to map the incoming value to the calibrated one:
 
 .. code-block:: yaml
@@ -82,9 +82,22 @@ Calibrated
     # Extract of configuration
     filters:
       - calibrate_linear:
-        - 10000 -> 12000
-        - 100000 -> 101325
+        - 3500 -> 3447
+        - 20500 -> 20684
 
+Scaling / converting units
+**************************
+
+The XDB-401 pressure sensor is by default set to output pressure in Pascal's (Pa).
+To convert to other units, you can use the ``scale`` filter.
+For example, to convert to psi:
+
+.. code-block:: yaml
+
+    # Extract of configuration
+    unit_of_measurement: "psi"
+    filters:
+      - scale: 0.000145037738
 
 Notes
 -----
