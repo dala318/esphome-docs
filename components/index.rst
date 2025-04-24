@@ -398,7 +398,7 @@ Environmental
     TMP102, components/sensor/tmp102, tmp102.jpg, Temperature
     TMP1075, components/sensor/tmp1075, tmp1075.jpg, Temperature
     TMP117, components/sensor/tmp117, tmp117.jpg, Temperature
-    XDB-401, components/sensor/xdb401, xdb401.jpg, Pressure
+    XDB-401, components/sensor/xdb401, xdb401.png, Pressure
     XGZP68xx Series, components/sensor/xgzp68xx, 6897d.jpg, Differential Pressure
 
 Health/Safety
